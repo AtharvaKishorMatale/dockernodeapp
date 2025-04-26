@@ -1,0 +1,29 @@
+Started by upstream project "DockerApp" build number 12
+originally caused by:
+ Started by GitHub push by AtharvaKishorMatale
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/Docker run
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Docker run/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AtharvaKishorMatale/dockernodeapp.git # timeout=10
+Fetching upstream changes from https://github.com/AtharvaKishorMatale/dockernodeapp.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/AtharvaKishorMatale/dockernodeapp.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 43e9bf411ee493955f9c7a71fec81dff763aca0b (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 43e9bf411ee493955f9c7a71fec81dff763aca0b # timeout=10
+Commit message: "commit3"
+ > git rev-list --no-walk 0d27e6f4c5f8cd29a683667d79e7c2e1ab66d393 # timeout=10
+[Docker run] $ /bin/sh -xe /tmp/jenkins17537521457684064527.sh
++ + true
+sudo docker stop nodecontainer
++ + sudotrue docker rm nodecontainer
+
++ sudo docker run -d -p80:3000 --name nodecontainer nodeimg
+0d201d90aa86296d79076306bdd209d07d6131171f3ae91948e72c276092c044
+Triggering a new build of DockerDeploy
+Finished: SUCCESS

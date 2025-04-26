@@ -1,0 +1,57 @@
+Started by GitHub push by AtharvaKishorMatale
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/DockerApp
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/DockerApp/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/AtharvaKishorMatale/dockernodeapp.git # timeout=10
+Fetching upstream changes from https://github.com/AtharvaKishorMatale/dockernodeapp.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/AtharvaKishorMatale/dockernodeapp.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 43e9bf411ee493955f9c7a71fec81dff763aca0b (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 43e9bf411ee493955f9c7a71fec81dff763aca0b # timeout=10
+Commit message: "commit3"
+ > git rev-list --no-walk 0d27e6f4c5f8cd29a683667d79e7c2e1ab66d393 # timeout=10
+[DockerApp] $ /bin/sh -xe /tmp/jenkins8077135523125074448.sh
++ sudo docker build -t nodeimg .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  98.82kB
+
+Step 1/7 : FROM node:21
+ ---> 5c8697e82213
+Step 2/7 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> a96c40458fe6
+Step 3/7 : COPY package*.json ./
+ ---> Using cache
+ ---> 17edd52fd9e3
+Step 4/7 : RUN npm install
+ ---> Using cache
+ ---> 5e4cd2dd4f47
+Step 5/7 : COPY . .
+ ---> 91b0add46dd5
+Step 6/7 : EXPOSE 3000
+ ---> Running in 99a6ee4a16d0
+ ---> Removed intermediate container 99a6ee4a16d0
+ ---> 989aae6b0d52
+Step 7/7 : CMD ["node","index.js"]
+ ---> Running in 3ccfb381ebce
+ ---> Removed intermediate container 3ccfb381ebce
+ ---> 40ba313cebad
+Successfully built 40ba313cebad
+Successfully tagged nodeimg:latest
++ sudo docker images
+REPOSITORY   TAG       IMAGE ID       CREATED                  SIZE
+nodeimg      latest    40ba313cebad   Less than a second ago   1.13GB
+<none>       <none>    3360c6ad5a8a   27 minutes ago           1.13GB
+<none>       <none>    f0369b4ddd54   37 minutes ago           1.13GB
+node         21        5c8697e82213   11 months ago            1.1GB
+Triggering a new build of Docker run
+Finished: SUCCESS
